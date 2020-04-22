@@ -8,8 +8,9 @@ import javax.persistence.*;
 
 public class Location {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
     private String station; //The station is the id overhere.
+   // @GeneratedValue(strategy= GenerationType.AUTO)
+
 
 
     private String description;

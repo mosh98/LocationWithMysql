@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+
 
 @Controller
 @RequestMapping(path= "/location")
@@ -15,14 +18,16 @@ public class MainController {
     private LocationRepository locationRepository;
 
     @PostMapping(path = "/add") //maps post requests
-    public @ResponseBody String addNewLocation(@RequestParam String Longitude,
-                                               @RequestParam String lat,
-                                               @RequestParam String station,
-                                               @RequestParam String description){
+    public @ResponseBody String addNewLocation(@Valid @NotBlank @RequestParam String Longitude,
+                                               @Valid @NotBlank @RequestParam String lat,
+                                               @Valid @NotBlank @RequestParam String station,
+                                               @Valid @NotBlank @RequestParam String description){
 
-        long longitu = java.lang.Long.parseLong(Longitude);
-        long latitude = java.lang.Long.parseLong(lat);
-        Location tmpLoco = new Location();
+        long longitu =  Long.parseLong(Longitude);
+
+        long latitude = Long.parseLong(lat);
+
+        Location tmpLoco = new Location(); //initializing
 
         //setting various attributes
             tmpLoco.setLongitude(longitu);
