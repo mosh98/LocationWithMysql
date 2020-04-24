@@ -41,8 +41,11 @@ public class MainController {
 
         return "Location SAVED";
     }
+
 @GetMapping(path = "/all")
     public @ResponseBody Iterable<Location> getALlUsers(){
         return locationRepository.findAll();
     }
 }
+
+
