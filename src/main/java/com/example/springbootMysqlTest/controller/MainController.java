@@ -2,12 +2,14 @@ package com.example.springbootMysqlTest.controller;
 
 import com.example.springbootMysqlTest.model.Location;
 import com.example.springbootMysqlTest.repository.LocationRepository;
+import org.hibernate.type.descriptor.sql.NVarcharTypeDescriptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import java.util.Optional;
 
 
 @Controller
@@ -45,6 +47,18 @@ public class MainController {
 @GetMapping(path = "/all")
     public @ResponseBody Iterable<Location> getALlUsers(){
         return locationRepository.findAll();
+    }
+
+/**
+ *  @GetMapping("/avgprice/{id}")
+ *     AvgPrice getById(@PathVariable(value = "id") Integer id){
+ *         return service.getAvgPriceById(id);
+ *     }
+ *     */
+    @GetMapping(path = "stations/{station}")
+    public @ResponseBody Optional<Location> getTheLocationOfStation(@PathVariable(value = "station")  String station ){
+
+        return locationRepository.findById(station);
     }
 }
 

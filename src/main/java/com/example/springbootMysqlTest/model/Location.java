@@ -5,7 +5,7 @@ package com.example.springbootMysqlTest.model;
 import javax.persistence.*;
 
 @Entity
-
+@Table()
 public class Location {
     @Id
     private String station; //The station is the id overhere.
@@ -56,4 +56,6 @@ public class Location {
     public void setLatitude(long latitude) {
         this.latitude = latitude;
     }
+
+
 }
