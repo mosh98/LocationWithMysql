@@ -20,23 +20,13 @@ public class MainController {
     private LocationRepository locationRepository;
 
     @PostMapping(path = "/add") //maps post requests
-    public @ResponseBody String addNewLocation(@Valid @NotBlank @RequestParam String Longitude,
-                                               @Valid @NotBlank @RequestParam String lat,
+    public @ResponseBody String addNewLocation(@Valid @NotBlank @RequestParam long longitude,
+                                               @Valid @NotBlank @RequestParam long latitude,
                                                @Valid @NotBlank @RequestParam String station,
                                                @Valid @NotBlank @RequestParam String description){
 
-        long longitu =  Long.parseLong(Longitude);
 
-        long latitude = Long.parseLong(lat);
-
-        Location tmpLoco = new Location(); //initializing
-
-        //setting various attributes
-            tmpLoco.setLongitude(longitu);
-            tmpLoco.setLatitude(latitude);
-            tmpLoco.setStation(station);
-            tmpLoco.setDescription(description);
-            //could add a picture in the future.
+        Location tmpLoco = new Location(station, description, longitude, latitude); //initializing
 
         //puts in the database
         locationRepository.save(tmpLoco);

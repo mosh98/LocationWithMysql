@@ -8,22 +8,30 @@ import javax.persistence.*;
 @Table()
 public class Location {
     @Id
+    @GeneratedValue
+    private int id;
+
     private String station; //The station is the id overhere.
-   // @GeneratedValue(strategy= GenerationType.AUTO)
-
-
 
     private String description;
 
     private long longitude;
+
     private long latitude;
 
-   /* public Location(Coordinates coordinates, String station, String description) {
-        this.coordinates = coordinates;
+    public Location() {
+    }
+
+    public Location(String station, String description, long longitude, long latitude) {
         this.station = station;
         this.description = description;
-    }*/
+        this.longitude = longitude;
+        this.latitude = latitude;
+    }
 
+    public int getId() {
+        return id;
+    }
 
     public String getStation() {
         return station;
