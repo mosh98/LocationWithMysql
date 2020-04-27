@@ -56,9 +56,9 @@ public class MainController {
  *     }
  *     */
     @GetMapping(path = "stations/{station}")
-    public @ResponseBody Optional<Location> getTheLocationOfStation(@PathVariable(value = "station")  String station ){
+    public @ResponseBody Optional<Iterable<Location>> getTheLocationOfStation(@PathVariable(value = "station")  String station ){
 
-        return locationRepository.findById(station);
+        return locationRepository.findByStation(station);
     }
 }
 
