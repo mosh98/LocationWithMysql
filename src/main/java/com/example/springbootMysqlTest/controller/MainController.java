@@ -25,15 +25,15 @@ public class MainController {
                                                @Valid @NotBlank @RequestParam String station,
                                                @Valid @NotBlank @RequestParam String description) {
 
-        long longitu =  Long.parseLong(Longitude);
+        /*long longitu =  Long.parseLong(Longitude);
 
-        long latitude = Long.parseLong(lat);
+        long latitude = Long.parseLong(lat);*/
 
         Location tmpLoco = new Location(); //initializing
 
         //setting various attributes
-            tmpLoco.setLongitude(longitu);
-            tmpLoco.setLatitude(latitude);
+            tmpLoco.setLongitude(Longitude);
+            tmpLoco.setLatitude(lat);
             tmpLoco.setStation(station);
             tmpLoco.setDescription(description);
             //could add a picture in the future.

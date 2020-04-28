@@ -15,8 +15,8 @@ public class Location {
 
     private String description;
 
-    private long longitude;
-    private long latitude;
+    private String longitude;
+    private String latitude;
 
    /* public Location(Coordinates coordinates, String station, String description) {
         this.coordinates = coordinates;
@@ -41,19 +41,19 @@ public class Location {
         this.description = description;
     }
 
-    public long getLongitude() {
+    public String getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(long longitude) {
+    public void setLongitude(String longitude) {
         this.longitude = longitude;
     }
 
-    public long getLatitude() {
+    public String getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(long latitude) {
+    public void setLatitude(String latitude) {
         this.latitude = latitude;
     }
 
