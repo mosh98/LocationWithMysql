@@ -23,7 +23,7 @@ public class MainController {
     public @ResponseBody String addNewLocation(@Valid @NotBlank @RequestParam String Longitude,
                                                @Valid @NotBlank @RequestParam String lat,
                                                @Valid @NotBlank @RequestParam String station,
-                                               @Valid @NotBlank @RequestParam String description){
+                                               @Valid @NotBlank @RequestParam String description) {
 
         long longitu =  Long.parseLong(Longitude);
 
