@@ -1,13 +1,11 @@
 package com.example.springbootMysqlTest;
 
-import com.example.springbootMysqlTest.repository.UserRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackageClasses = UserRepository.class)
 public class SpringbootMysqlTestApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
